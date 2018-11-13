@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/client.js"></script>
+  </head>
+
+  <body>
+    <h1>Tree ID</h1>
+
+    <main>
+      <input
+        id="file-input"
+        class="no-display"
+        type="file"
+        name="file"
+        accept="image/*"
+        onchange="showPicked(this)"
+        hidden
+      />
+      <button class="pure-button" type="button" onclick="showPicker()">
+        Upload photo
+      </button>
+
+      <div class="image" hidden>
+        <img id="image-picked" hidden alt="Chosen Image" height="200" />
+        <label id="upload-label"></label>
+      </div>
+
+      <div id="result" hidden></div>
+    </main>
+  </body>
+</html>

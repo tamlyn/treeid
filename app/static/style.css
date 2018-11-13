@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+*[hidden] {
+    display: none !important;
+}
+
+h1 {
+    margin: 0;
+    padding: 8px 16px;
+    font-weight: normal;
+    background-color: #0078e7;
+    color: #fff;
+}
+
+main {
+    padding: 16px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 8px 16px;
+    color: rgba(0,0,0,.8);
+    border: none;
+    background-color: #eee;
+    border-radius: 2px;
+}
+
+.image {
+    margin: 16px 0;
+    padding: 16px;
+    background: #eee;
+    font-size: smaller;
+}
+
+.image img {
+    display: block;
+    padding-bottom: 8px;
+}
+
+#result a {
+    display: block;
+}
