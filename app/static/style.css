@@ -45,3 +45,20 @@ button {
 #result a {
     display: block;
 }
+
+#feedback, #thanks {
+    margin: 16px 0;
+    padding: 16px;
+    border: 1px solid #eee;
+}
+
+#feedback button {
+    display: block;
+    margin: 8px 0;
+    width: 100%;
+}
+
+button.correct {
+    background-color: green;
+    color: white;
+}

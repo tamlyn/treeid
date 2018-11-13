@@ -1,0 +1,2 @@
+app/models/*.pth
+.DS_Store

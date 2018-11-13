@@ -19,7 +19,7 @@
         onchange="showPicked(this)"
         hidden
       />
-      <button class="pure-button" type="button" onclick="showPicker()">
+      <button type="button" onclick="showPicker()">
         Upload photo
       </button>
 
@@ -29,6 +29,17 @@
       </div>
 
       <div id="result" hidden></div>
+
+      <div id="feedback" hidden>
+          <p>Is this right?</p>
+          <button type="button" name="YES" onclick="sendFeedback(this)">Don't know</button>
+          <button type="button" name="CAS" onclick="sendFeedback(this)"></button>
+          <button type="button" name="PLA" onclick="sendFeedback(this)"></button>
+          <button type="button" name="QUE" onclick="sendFeedback(this)"></button>
+          <button type="button" name="ACE" onclick="sendFeedback(this)"></button>
+      </div>
+
+      <div id="thanks" hidden>Thank you! Your feedback is used to improve the classification model.</div>
     </main>
   </body>
 </html>
