@@ -19,7 +19,7 @@ bucket_name = 'treeid'
 
 model_file_url = 'https://tamlyn.s3.amazonaws.com/ml/stage2.pth'
 model_file_name = 'bark-model2'
-classes = ['CAS', 'PLA', 'ACE', 'QUE']
+classes = ['PLA', 'ACE', 'QUE', 'CAS']
 path = Path(__file__).parent
 
 app = Starlette()
