@@ -23,15 +23,12 @@ classes = ['PLA', 'ACE', 'QUE', 'CAS']
 path = Path(__file__).parent
 
 app = Starlette()
-app.add_middleware(CORSMiddleware, allow_origins=[
-                   '*'], allow_headers=['X-Requested-With', 'Content-Type'])
-app.mount('/static', StaticFiles(directory='app/static'))
-
 
 async def download_file(url, dest):
     if dest.exists():
         return
     async with aiohttp.ClientSession() as session:
+        print('Downloading model...')
         async with session.get(url) as response:
             data = await response.read()
             with open(dest, 'wb') as f:
@@ -57,12 +54,6 @@ loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
-
-
-@app.route('/')
-def index(request):
-    html = path/'view'/'index.html'
-    return HTMLResponse(html.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
@@ -91,5 +82,4 @@ async def feedback(request):
     return JSONResponse({})
 
 if __name__ == '__main__':
-    if 'serve' in sys.argv:
-        uvicorn.run(app, host='0.0.0.0', port=5042)
+    uvicorn.run(app, host='0.0.0.0', port=5042)

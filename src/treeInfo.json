@@ -1,0 +1,22 @@
+{
+  "PLA": {
+    "name": "London plane",
+    "binomial": "Platanus × acerifolia",
+    "link": "https://en.wikipedia.org/wiki/Platanus_%C3%97_acerifolia"
+  },
+  "ACE": {
+    "name": "Field maple",
+    "binomial": "Acer campestre",
+    "link": "https://en.wikipedia.org/wiki/Acer_campestre"
+  },
+  "CAS": {
+    "name": "Sweet chestnut",
+    "binomial": "Castanea sativa",
+    "link": "https://en.wikipedia.org/wiki/Castanea_sativa"
+  },
+  "QUE": {
+    "name": "European oak",
+    "binomial": "Quercus robur",
+    "link": "https://en.wikipedia.org/wiki/Quercus_robur"
+  }
+}
