@@ -14,9 +14,19 @@
     "binomial": "Castanea sativa",
     "link": "https://en.wikipedia.org/wiki/Castanea_sativa"
   },
-  "QUE": {
-    "name": "European oak",
-    "binomial": "Quercus robur",
-    "link": "https://en.wikipedia.org/wiki/Quercus_robur"
+  "SAL": {
+    "name": "Willow",
+    "binomial": "Salix",
+    "link": "https://en.wikipedia.org/wiki/Willow"
+  },
+  "ULM": {
+    "name": "English elm",
+    "binomial": "Ulmus minor 'Atinia'",
+    "link": "https://en.wikipedia.org/wiki/Ulmus_minor_%27Atinia%27"
+  },
+  "TIL": {
+    "name": "Common lime",
+    "binomial": "Tilia × europaea",
+    "link": "https://en.wikipedia.org/wiki/Tilia_%C3%97_europaea"
   }
 }

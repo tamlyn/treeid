@@ -13,13 +13,11 @@ import uuid
 from fastai import *
 from fastai.vision import *
 
-#AWS_ACCESS_KEY_ID = os.getenv('aws_access_key_id')
-#AWS_ACCESS_KEY_SECRET = os.getenv('aws_access_key_secret')
 bucket_name = 'treeid'
 
-model_file_url = 'https://tamlyn.s3.amazonaws.com/ml/stage2.pth'
-model_file_name = 'bark-model2'
-classes = ['PLA', 'ACE', 'QUE', 'CAS']
+model_file_url = 'https://tamlyn.s3.amazonaws.com/ml/stage2-512.pth'
+model_file_name = 'bark-model3'
+classes = ['PLA', 'ULM', 'SAL', 'TIL', 'ACE', 'CAS']
 path = Path(__file__).parent
 
 app = Starlette()
@@ -61,20 +59,20 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    name = str(uuid.uuid4())
-    upload(name, img_bytes)
+    fileId = str(uuid.uuid4())
+    upload(fileId, img_bytes)
     return JSONResponse({
         'result': learn.predict(img)[0],
-        'name': name
+        'fileId': fileId
     })
 
 @app.route('/feedback', methods=['POST'])
 async def feedback(request):
     data = await request.json()
-    id = data['id']
+    fileId = data['fileId']
     actual = data['actual']
-    source = f'incoming/{id}.jpg'
-    dest = f'labelled/{actual}/{id}.jpg'
+    source = f'incoming/{fileId}.jpg'
+    dest = f'labelled/{actual}/{fileId}.jpg'
 
     s3 = boto3.client('s3')
     s3.copy_object(Bucket=bucket_name, CopySource=f'{bucket_name}/{source}', Key=dest)

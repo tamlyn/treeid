@@ -10,24 +10,22 @@ export default () => (
     <ImageCard src="/bark.jpg" mb={2}>
       What's that tree?
     </ImageCard>
-    <Card borderRadius={3} border="1px solid lightgrey" mb={2} p={3}>
-      <Text fontFamily="serif" fontSize={3} mb={3}>
+    <Card borderRadius={3} bg="#f0f0f0" color="#333" mb={2} p={3}>
+      <Text fontSize={3} mb={3}>
         This is an early prototype app to identify the species of a tree from
         photos of bark. It uses a deep neural network to recognise the unique
         patterns in the bark.
       </Text>
-      <Text fontFamily="serif" fontSize={3} mb={3}>
+      <Text fontSize={3} mb={3}>
         At the stage it is not 100% accurate and it only knows about the
         following species:
         <ul>
           {species.map(name => (
-            <li>{name}</li>
+            <li key={name}>{name}</li>
           ))}
         </ul>
       </Text>
-      <Text fontFamily="serif" fontSize={3}>
-        Start by uploading a photo ⤴
-      </Text>
+      <Text fontSize={3}>Start by uploading a photo ⤴</Text>
     </Card>
   </React.Fragment>
 );

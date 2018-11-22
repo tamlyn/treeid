@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "rebass";
+import React from 'react';
+import { Button } from 'rebass';
 
 class FileUploadButton extends React.Component {
   showFilePicker() {
@@ -12,12 +12,17 @@ class FileUploadButton extends React.Component {
       <React.Fragment>
         <input
           accept="image/*"
-          style={{display: 'none'}}
+          style={{ display: 'none' }}
           type="file"
           onChange={this.props.onSelect}
           ref={node => (this.input = node)}
         />
-        <Button onClick={() => this.showFilePicker()} {...props}>
+        <Button
+          bg="magenta"
+          borderRadius={0}
+          onClick={() => this.showFilePicker()}
+          {...props}
+        >
           {children}
         </Button>
       </React.Fragment>

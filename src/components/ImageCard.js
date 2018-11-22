@@ -11,7 +11,7 @@ export default ({ src, children, ...props }) => (
     borderRadius={3}
     {...props}
   >
-    <Heading as="h1" textAlign="center" fontSize={5} py={5}>
+    <Heading as="h1" textAlign="center" fontSize={5} py={100}>
       {children}
     </Heading>
   </Card>
